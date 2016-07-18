@@ -17,7 +17,7 @@ public class JetsMain extends JavaPlugin {
 		
 		logger.log(Level.INFO, getName() + " version " + getDescription().getVersion()
 				+ " is enabled!");
-		
+
 	}
 	
 	public void onDisable() {
