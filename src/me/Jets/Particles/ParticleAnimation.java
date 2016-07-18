@@ -8,7 +8,8 @@ public class ParticleAnimation {
 	 * Location, radius, particleType, y value, x Offset, y Offset, z Offset,
 	 * Float speed, amount, range, Boolean Reverse rotation.
 	 */
-	public void doCircle(Location loc, Double r, String particleType, Integer y, Float xo, Float yo, Float zo,
+	//test
+	public static void doCircle(Location loc, Double r, String particleType, Integer y, Float xo, Float yo, Float zo,
 			Float speed, Integer amount, Integer range, Boolean reverse) {
 
 		double t = 0;
