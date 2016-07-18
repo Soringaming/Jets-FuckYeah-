@@ -32,5 +32,5 @@ public class JetsMain extends JavaPlugin {
 			String label, String[] args) {
 		return CommandHandler.execute(sender, cmd, args);
 	}
-
+	
 }
