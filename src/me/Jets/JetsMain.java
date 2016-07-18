@@ -7,13 +7,13 @@ public class JetsMain extends JavaPlugin {
 	
 	public void onEnable() {
 		
-		Bukkit.getServer().getLogger().info("Jets Enabled!");
+		Bukkit.getServer().getLogger().info("[Jets] Jets Enabled!");
 		
 	}
 	
 	public void onDisable() {
 		
-		Bukkit.getServer().getLogger().info("Jets Disabled!");
+		Bukkit.getServer().getLogger().info("[Jets] Jets Disabled!");
 		
 	}
 
