@@ -1,8 +1,10 @@
 package me.Jets.Commands;
 
-public class Command {
+
+public class CommandBase {
 	public final AccessType accessType;
-	public Command(AccessType accessType) {
+
+	public CommandBase(AccessType accessType) {
 		this.accessType = accessType;
 	}
 }
