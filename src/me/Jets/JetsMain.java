@@ -5,7 +5,6 @@ import java.util.logging.Logger;
 
 import me.Jets.Handlers.CommandHandler;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -33,5 +32,5 @@ public class JetsMain extends JavaPlugin {
 			String label, String[] args) {
 		return CommandHandler.execute(sender, cmd, args);
 	}
-
+	
 }

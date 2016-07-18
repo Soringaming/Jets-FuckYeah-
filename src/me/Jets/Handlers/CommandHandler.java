@@ -10,8 +10,9 @@ public class CommandHandler {
 		String label = cmd.getLabel();
 
 		switch (label) {
-		case "whatever":
-			// TODO Run whatever command
+		case "jet":
+			// Jet command
+			MainCommands
 			return true;
 		case "other":
 			// TODO Run other command idk
