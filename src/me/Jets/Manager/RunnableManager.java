@@ -1,14 +1,16 @@
 package me.Jets.Manager;
 
-import org.bukkit.scheduler.BukkitRunnable;
-
+import static me.Jets.Jets.Jets.jets;
 import me.Jets.JetsMain;
+
+import org.bukkit.entity.Player;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class RunnableManager {
 
 	private static boolean stop;
 	
-	public static void StartRunnable() {
+	public static void StartRunnable(JetsMain plugin) {
 		
 		stop = false;
 		
@@ -16,6 +18,11 @@ public class RunnableManager {
 
 			@Override
 			public void run() {
+				
+				for (Player p : jets.keySet()) {
+					
+				}
+				
 				if(stop) {
 					this.cancel();
 				}
@@ -23,7 +30,7 @@ public class RunnableManager {
 				
 			}
 			
-		}.runTaskTimer(new JetsMain(), 0L, 1L);
+		}.runTaskTimer(plugin, 0L, 1L);
 	}
 	
 	public static void StopRunnable() {

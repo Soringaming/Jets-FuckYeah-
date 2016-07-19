@@ -5,5 +5,5 @@ import java.util.HashMap;
 import org.bukkit.entity.Player;
 
 public class Jets {
-	public static HashMap<Player, PlayerDataHolder> jets = new HashMap<Player, PlayerDataHolder>();
+	public static HashMap<Player, Jet> jets = new HashMap<Player, Jet>();
 }
