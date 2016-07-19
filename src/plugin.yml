@@ -5,6 +5,10 @@ author: David_Septyr, Soringaming, Loonyy, Moon243
 description: Have dog fights!
 
 commands:
+     Jet:
+         usage: /<command>
+         description: Main command
+         
      JetsHelp:
          usage: /<command>
          description: Help message
