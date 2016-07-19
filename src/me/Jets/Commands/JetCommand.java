@@ -6,9 +6,16 @@ import me.Jets.Jets.PlayerDataHolder;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class JetCommand {
-	public static void run(CommandSender sender, String[] args) {
+public class JetCommand implements CommandBase{
+	public void run(CommandSender sender, String[] args) {
 		Player player = (Player) sender;
-		jets.put(player, PlayerDataHolder.loadData(player));
+		if (jets.containsKey(player)) {
+			jets.remove(player);
+		} else {
+			jets.put(player, PlayerDataHolder.loadData(player));
+			player.sendMessage("Woosh!");
+			
+			
+		}
 	}
 }
