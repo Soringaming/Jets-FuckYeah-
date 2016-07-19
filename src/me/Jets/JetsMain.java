@@ -9,6 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.Jets.Handlers.CommandHandler;
+import me.Jets.Manager.RunnableManager;
 
 public class JetsMain extends JavaPlugin {
 	
@@ -24,12 +25,17 @@ public class JetsMain extends JavaPlugin {
 				}) {
 			getServer().getPluginManager().registerEvents(l, this);
 		}
+		
+		RunnableManager.StartRunnable();
+		
 	}
 	
 	public void onDisable() {
 		
 		logger.log(Level.INFO, getName() + " version " + getDescription().getVersion()
 				+ " is disabled!");
+		
+		RunnableManager.StopRunnable();
 		
 	}
 	
