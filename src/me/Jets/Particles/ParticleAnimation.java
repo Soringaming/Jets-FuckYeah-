@@ -8,7 +8,6 @@ public class ParticleAnimation {
 	 * Location, radius, particleType, y value, x Offset, y Offset, z Offset,
 	 * Float speed, amount, range, Boolean Reverse rotation.
 	 */
-	//test
 	public static void doCircle(Location loc, Double r, String particleType, Integer y, Float xo, Float yo, Float zo,
 			Float speed, Integer amount, Integer range, Boolean reverse) {
 
@@ -27,5 +26,15 @@ public class ParticleAnimation {
 		loc.add(x, y, z);
 
 	}
-
+	
+	public static void doRadialWave(Location loc, Double r, String particleType, Integer y, Integer spread, Double WaveHeight) {
+		/*
+		 * Sorin
+		 * Love
+		 * Me
+		 */
+	}
+	
+	
+	//Have you ever seen a grown man naked?
 }
