@@ -27,18 +27,20 @@ public class ParticleAnimation {
 
 	}
 
-	public static void doRadialWave(Location loc, String particleType, Integer spread, Double WaveHeightStart,
-			Double WaveSpeed, Double WaveAmpRate, Double WaveDecreaseRate, Double WaveMaxDistance, Float xo, Float yo, Float zo, Float speed, Integer amount, Integer range) {
+	public static void doRadialWave(Location location, String particleType, int spread, double WaveHeightStart,
+			double WaveSpeed, double WaveAmpRate, double WaveDecreaseRate, double WaveMaxDistance, float FloatXOffset,
+			float floatYOffset, float floatZOffset, float Floatspeed, int Intamount, int Intrange) {
 		double t = 0;
 		t = t + WaveSpeed * Math.PI;
-		if(t < WaveMaxDistance) {
+		if (t < WaveMaxDistance) {
 			for (double theta = 0; theta <= 2 * Math.PI; theta = theta * Math.PI / spread) {
 				double x = Math.sin(theta);
 				WaveHeightStart = Math.exp(WaveDecreaseRate * t) * Math.sin(t) + WaveAmpRate;
 				double z = Math.sin(theta);
-				loc.add(x, WaveHeightStart, z);
-				ParticleEffect.fromName(particleType).display(xo, yo, zo, speed, amount, loc, range);
-				loc.subtract(x, WaveHeightStart, z);
+				location.add(x, WaveHeightStart, z);
+				ParticleEffect.fromName(particleType).display(FloatXOffset, floatYOffset, floatZOffset, Floatspeed, Intamount,
+						location, Intrange);
+				location.subtract(x, WaveHeightStart, z);
 			}
 		}
 

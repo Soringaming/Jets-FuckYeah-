@@ -3,13 +3,13 @@ package me.Jets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import me.Jets.Handlers.CommandHandler;
-import me.Jets.Manager.RunnableManager;
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import me.Jets.Handlers.CommandHandler;
+import me.Jets.Manager.RunnableManager;
 
 public class JetsMain extends JavaPlugin {
 	
