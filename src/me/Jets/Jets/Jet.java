@@ -1,12 +1,9 @@
 package me.Jets.Jets;
 
-<<<<<<< HEAD
 import me.Jets.Util.MeasurementPreference;
 import me.Jets.Util.Speed;
 
 import org.bukkit.Bukkit;
-=======
->>>>>>> origin/master
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.boss.BarColor;
@@ -15,9 +12,6 @@ import org.bukkit.boss.BossBar;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-
-import me.Jets.Util.MeasurementPreference;
-import me.Jets.Util.Speed;
 
 public class Jet {
 
