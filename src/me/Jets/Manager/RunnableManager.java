@@ -1,8 +1,10 @@
 package me.Jets.Manager;
 
-import org.bukkit.scheduler.BukkitRunnable;
-
+import static me.Jets.Jets.Jets.jets;
 import me.Jets.JetsMain;
+import me.Jets.Jets.Jet;
+
+import org.bukkit.scheduler.BukkitRunnable;
 
 public class RunnableManager {
 
@@ -16,6 +18,11 @@ public class RunnableManager {
 
 			@Override
 			public void run() {
+				
+				for (Jet j : jets.values()) {
+					j.update();
+				}
+				
 				if(stop) {
 					this.cancel();
 				}

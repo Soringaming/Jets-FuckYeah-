@@ -26,9 +26,9 @@ public class PlayerDataHolder {
 				player.getInventory(), player.getFoodLevel(),
 				player.getSaturation());
 	}
-	
+
 	public static void restoreData(Player player) {
-		PlayerDataHolder data = jets.get(player);
+		PlayerDataHolder data = jets.get(player).playerDataHolder;
 		player.setExp(data.exp);
 		player.setLevel(data.level);
 		player.getInventory().setContents(data.inv.getContents());
