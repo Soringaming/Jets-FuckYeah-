@@ -45,7 +45,7 @@ public class PlayerInteractEvent implements Listener {
 			bullet.setPickupDelay(1000000);
 			for (int i = 0; i < dist * 4; i++) {
 				loc.add(player.getEyeLocation().getDirection().multiply(.25));
-				bullet.teleport(bullet);
+				bullet.teleport(loc);
 				if (bullet.getWorld().getBlockAt(loc).getType().isSolid()) {
 					bullet.remove();
 					break;
