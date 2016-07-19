@@ -10,11 +10,12 @@ public class JetCommand implements CommandBase{
 	public void run(CommandSender sender, String[] args) {
 		Player player = (Player) sender;
 		if (jets.containsKey(player)) {
+			// Un-jet
 			jets.remove(player);
+			PlayerDataHolder.restoreData(player);
 		} else {
 			jets.put(player, PlayerDataHolder.loadData(player));
 			player.sendMessage("Woosh!");
-			
 			
 		}
 	}

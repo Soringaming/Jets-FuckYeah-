@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.Jets.Handlers.CommandHandler;
@@ -18,6 +19,11 @@ public class JetsMain extends JavaPlugin {
 		logger.log(Level.INFO, getName() + " version " + getDescription().getVersion()
 				+ " is enabled!");
 
+		for (Listener l : new Listener[] {
+				// TODO List events in here
+				}) {
+			getServer().getPluginManager().registerEvents(l, this);
+		}
 	}
 	
 	public void onDisable() {
