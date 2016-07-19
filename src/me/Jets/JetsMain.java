@@ -8,6 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import me.Jets.Event.PlayerInteractEvent;
 import me.Jets.Handlers.CommandHandler;
 import me.Jets.Manager.RunnableManager;
 
@@ -21,7 +22,7 @@ public class JetsMain extends JavaPlugin {
 				+ " is enabled!");
 
 		for (Listener l : new Listener[] {
-				// TODO List events in here
+				new PlayerInteractEvent()
 				}) {
 			getServer().getPluginManager().registerEvents(l, this);
 		}

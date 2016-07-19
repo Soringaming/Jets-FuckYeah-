@@ -84,7 +84,8 @@ public class Jet {
 		if (player.isSneaking() && !((HumanEntity) player).isOnGround()) {
 			player.setVelocity(player.getVelocity().add(
 					player.getEyeLocation().getDirection().multiply(maxAccel)));
-			fuel -= 0.001;
+			if (fuel >= 0.01)
+			fuel -= 0.01;
 		}
 		
 		if (player.getVelocity().length() > maxSpeed) {

@@ -5,15 +5,9 @@ author: David_Septyr, Soringaming, Loonyy, Moon243
 description: Have dog fights!
 
 commands:
-<<<<<<< HEAD
   jets:
-    desctiption: yay
-=======
-     Jet:
-         usage: /<command>
-         description: Main command
-         
-     JetsHelp:
-         usage: /<command>
-         description: Help message
->>>>>>> origin/master
+    usage: /<command>
+    description: Main command
+  JetsHelp:
+    usage: /<command>
+    description: Help message
