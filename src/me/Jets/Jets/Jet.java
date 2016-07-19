@@ -1,13 +1,13 @@
 package me.Jets.Jets;
 
-import me.Jets.Util.MeasurementPreference;
-import me.Jets.Util.Speed;
-
 import org.bukkit.Location;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
+
+import me.Jets.Util.MeasurementPreference;
+import me.Jets.Util.Speed;
 
 public class Jet {
 
