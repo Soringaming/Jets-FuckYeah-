@@ -1,7 +1,8 @@
 package me.Jets.Commands;
 
 public enum Cmnds {
-	JETS("jets", AccessType.PLAYER, new JetCommand());
+	JETS("jets", AccessType.PLAYER, new JetCommand()),
+	JETSHELP("jetshelp", AccessType.EITHER, new JetsHelp());
 	
 	private String label;
 	private AccessType accessType;
