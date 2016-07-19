@@ -1,9 +1,9 @@
 package me.Jets.Commands;
 
-public class JetCommand extends CommandBase {
-	
-	public JetCommand(AccessType accessType) {
-		super(accessType);
-		// TODO Auto-generated constructor stub 
+import org.bukkit.command.CommandSender;
+
+public class JetCommand {
+	public static void run(CommandSender sender, String[] args) {
+		
 	}
 }
