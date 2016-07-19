@@ -26,7 +26,7 @@ public class JetsMain extends JavaPlugin {
 			getServer().getPluginManager().registerEvents(l, this);
 		}
 		
-		RunnableManager.StartRunnable();
+		RunnableManager.StartRunnable(this);
 		
 	}
 	

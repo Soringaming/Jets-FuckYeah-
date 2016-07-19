@@ -8,7 +8,7 @@ public class RunnableManager {
 
 	private static boolean stop;
 	
-	public static void StartRunnable() {
+	public static void StartRunnable(JetsMain plugin) {
 		
 		stop = false;
 		
@@ -23,7 +23,7 @@ public class RunnableManager {
 				
 			}
 			
-		}.runTaskTimer(new JetsMain(), 0L, 1L);
+		}.runTaskTimer(plugin, 0L, 1L);
 	}
 	
 	public static void StopRunnable() {
