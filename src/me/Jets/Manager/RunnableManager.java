@@ -2,8 +2,8 @@ package me.Jets.Manager;
 
 import static me.Jets.Jets.Jets.jets;
 import me.Jets.JetsMain;
+import me.Jets.Jets.Jet;
 
-import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class RunnableManager {
@@ -19,8 +19,8 @@ public class RunnableManager {
 			@Override
 			public void run() {
 				
-				for (Player p : jets.keySet()) {
-					
+				for (Jet j : jets.values()) {
+					j.update();
 				}
 				
 				if(stop) {

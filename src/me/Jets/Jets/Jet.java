@@ -38,7 +38,7 @@ public class Jet {
 	public Location previousLoc;
 	public Speed speed = new Speed();
 
-	Jet(Player player, PlayerDataHolder playerDataHolder) {
+	public Jet(Player player, PlayerDataHolder playerDataHolder) {
 		this.player = player;
 		this.playerDataHolder = playerDataHolder;
 
