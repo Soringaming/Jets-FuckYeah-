@@ -28,13 +28,7 @@ public class ParticleAnimation {
 	}
 	
 	public static void doRadialWave(Location loc, Double r, String particleType, Integer y, Integer spread, Double WaveHeight) {
-		/*
-		 * Sorin
-		 * Love
-		 * Me
-		 */
+		
 	}
-	
-	
-	//Have you ever seen a grown man naked?
+
 }

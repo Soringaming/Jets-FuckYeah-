@@ -3,11 +3,13 @@ package me.Jets;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import me.Jets.Handlers.CommandHandler;
+import me.Jets.Manager.RunnableManager;
 
 public class JetsMain extends JavaPlugin {
 	
@@ -17,6 +19,7 @@ public class JetsMain extends JavaPlugin {
 		
 		logger.log(Level.INFO, getName() + " version " + getDescription().getVersion()
 				+ " is enabled!");
+		RunnableManager.StartRunnable();
 
 	}
 	
@@ -24,6 +27,7 @@ public class JetsMain extends JavaPlugin {
 		
 		logger.log(Level.INFO, getName() + " version " + getDescription().getVersion()
 				+ " is disabled!");
+		RunnableManager.StopRunnable();
 		
 	}
 	
