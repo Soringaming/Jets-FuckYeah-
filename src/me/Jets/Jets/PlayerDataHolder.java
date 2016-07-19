@@ -29,7 +29,6 @@ public class PlayerDataHolder {
 	
 	public static void restoreData(Player player) {
 		PlayerDataHolder data = jets.get(player);
-		
 		player.setExp(data.exp);
 		player.setLevel(data.level);
 		player.getInventory().setContents(data.inv.getContents());
