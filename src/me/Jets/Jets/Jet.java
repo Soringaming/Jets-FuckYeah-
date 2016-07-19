@@ -3,11 +3,15 @@ package me.Jets.Jets;
 import me.Jets.Util.MeasurementPreference;
 import me.Jets.Util.Speed;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 public class Jet {
 
@@ -19,21 +23,26 @@ public class Jet {
 
 	public MeasurementPreference mPreference = MeasurementPreference.MPH;
 
-	public float fuel;
-	public float mGun;
-	public int missiles;
-	public int flares;
-	public int bombs;
+	public float fuel = 1;
+	public float mGun = 1;
+	public int missiles = 10;
+	public int flares = 6;
+	public int bombs = 12;
 
-	public int maxMissiles;
-	public int maxFlares;
-	public int maxBombs;
+	public int maxMissiles = 10;
+	public int maxFlares = 6;
+	public int maxBombs = 12;
 
-	public BossBar fuelBar;
-	public BossBar mGunAmmoBar;
-	public BossBar missileAmmoBar;
-	public BossBar flaresBar;
-	public BossBar bombsBar;
+	public BossBar fuelBar = Bukkit.createBossBar("§7Fuel", BarColor.WHITE,
+			BarStyle.SOLID);
+	public BossBar mGunAmmoBar = Bukkit.createBossBar("§bMachine Gun",
+			BarColor.BLUE, BarStyle.SOLID);
+	public BossBar missileAmmoBar = Bukkit.createBossBar("§aMissiles",
+			BarColor.GREEN, BarStyle.SEGMENTED_10);
+	public BossBar flaresBar = Bukkit.createBossBar("§cFlares", BarColor.RED,
+			BarStyle.SEGMENTED_6);
+	public BossBar bombsBar = Bukkit.createBossBar("§dBombs", BarColor.PURPLE,
+			BarStyle.SEGMENTED_12);
 
 	public Location previousLoc;
 	public Speed speed = new Speed();
@@ -41,6 +50,7 @@ public class Jet {
 	public Jet(Player player, PlayerDataHolder playerDataHolder) {
 		this.player = player;
 		this.playerDataHolder = playerDataHolder;
+		previousLoc = player.getLocation();
 
 		setBar(fuelBar, "§7Fuel", 1d, BarColor.WHITE, BarStyle.SOLID, true);
 		setBar(mGunAmmoBar, "§bMachine Gun", 1d, BarColor.BLUE, BarStyle.SOLID,
@@ -51,11 +61,28 @@ public class Jet {
 				false);
 		setBar(bombsBar, "§dBombs", 1d, BarColor.PURPLE, BarStyle.SEGMENTED_12,
 				false);
+		
+		player.getInventory().clear();
+		player.getInventory().setChestplate(new ItemStack(Material.ELYTRA, 1));
+		player.getInventory().setItem(0, new ItemStack(Material.STONE_BUTTON, 1));
 	}
 
 	public void update() {
+		player.setGliding(true);
 		updateBars();
 		updateSpeedometer();
+		
+		if (player.isSneaking() && !((HumanEntity) player).isOnGround()) {
+			player.setVelocity(player.getVelocity().add(
+					player.getEyeLocation().getDirection().multiply(maxAccel)));
+		}
+		
+		if (player.getVelocity().length() > maxSpeed) {
+			double mult = maxSpeed / player.getVelocity().length();
+			player.setVelocity(player.getVelocity().multiply(mult));
+		}
+		
+		previousLoc = player.getLocation();
 	}
 
 	public void updateBars() {

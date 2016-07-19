@@ -12,6 +12,7 @@ public enum Cmd {
 	public CommandBase command;
 
 	Cmd(String label, AccessType accessType, CommandBase command) {
+		this.label = label;
 		this.accessType = accessType;
 		this.command = command;
 	}
@@ -36,7 +37,9 @@ public enum Cmd {
 
 	public static void runCmd(CommandSender sender, String[] args, String label) {
 		Cmd cmd = commandFromLabel(label);
+		sender.sendMessage(label + " ? " + JETS.label);
 		if (cmd != null) {
+			sender.sendMessage("test1");
 			if (cmd.accessType.equals(AccessType.EITHER)
 					|| (sender instanceof Player && cmd.accessType
 							.equals(AccessType.PLAYER))
