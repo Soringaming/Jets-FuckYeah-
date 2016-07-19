@@ -3,3 +3,7 @@ version: 1.0
 main: me.Jets.JetsMain
 author: David_Septyr, Soringaming, Loonyy, Moon243
 description: Have dog fights!
+
+commands:
+  jet:
+    desctiption: yay

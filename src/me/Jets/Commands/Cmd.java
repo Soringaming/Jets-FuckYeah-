@@ -24,7 +24,7 @@ public enum Cmd {
 		return accessType;
 	}
 
-	public Cmd commandFromLabel(String label) {
+	public static Cmd commandFromLabel(String label) {
 		for (Cmd cmd : Cmd.values()) {
 			if (label.equalsIgnoreCase(cmd.label)) {
 				return cmd;
@@ -34,7 +34,7 @@ public enum Cmd {
 		return null;
 	}
 
-	public void runCmd(CommandSender sender, String[] args, String label) {
+	public static void runCmd(CommandSender sender, String[] args, String label) {
 		Cmd cmd = commandFromLabel(label);
 		if (cmd != null) {
 			if (cmd.accessType.equals(AccessType.EITHER)
