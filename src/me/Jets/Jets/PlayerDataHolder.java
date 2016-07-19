@@ -1,5 +1,7 @@
 package me.Jets.Jets;
 
+import static me.Jets.Jets.Jets.jets;
+
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
@@ -23,5 +25,15 @@ public class PlayerDataHolder {
 		return new PlayerDataHolder(player.getExp(), player.getLevel(),
 				player.getInventory(), player.getFoodLevel(),
 				player.getSaturation());
+	}
+	
+	public static void restoreData(Player player) {
+		PlayerDataHolder data = jets.get(player);
+		
+		player.setExp(data.exp);
+		player.setLevel(data.level);
+		player.getInventory().setContents(data.inv.getContents());
+		player.setFoodLevel(data.foodLevel);
+		player.setSaturation(data.saturation);
 	}
 }
