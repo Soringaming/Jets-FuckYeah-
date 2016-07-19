@@ -51,6 +51,12 @@ public class Jet {
 		this.player = player;
 		this.playerDataHolder = playerDataHolder;
 		previousLoc = player.getLocation();
+		
+		fuelBar.addPlayer(player);
+		mGunAmmoBar.addPlayer(player);
+		missileAmmoBar.addPlayer(player);
+		flaresBar.addPlayer(player);
+		bombsBar.addPlayer(player);
 
 		setBar(fuelBar, "§7Fuel", 1d, BarColor.WHITE, BarStyle.SOLID, true);
 		setBar(mGunAmmoBar, "§bMachine Gun", 1d, BarColor.BLUE, BarStyle.SOLID,
@@ -62,9 +68,12 @@ public class Jet {
 		setBar(bombsBar, "§dBombs", 1d, BarColor.PURPLE, BarStyle.SEGMENTED_12,
 				false);
 		
+		player.setVelocity(player.getEyeLocation().getDirection().setY(10));
+		
 		player.getInventory().clear();
 		player.getInventory().setChestplate(new ItemStack(Material.ELYTRA, 1));
 		player.getInventory().setItem(0, new ItemStack(Material.STONE_BUTTON, 1));
+		player.updateInventory();
 	}
 
 	public void update() {
@@ -75,6 +84,7 @@ public class Jet {
 		if (player.isSneaking() && !((HumanEntity) player).isOnGround()) {
 			player.setVelocity(player.getVelocity().add(
 					player.getEyeLocation().getDirection().multiply(maxAccel)));
+			fuel -= 0.001;
 		}
 		
 		if (player.getVelocity().length() > maxSpeed) {
